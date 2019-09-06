@@ -82,11 +82,11 @@ function mergeSort(arr, l, r) {
     Traverse back up the recursion tree - The "Conquer" part
 
     Recursion Level 2 (Up):
-    L1: {3, 38} R1: {41, 57}
-    L2: {9, 52} R2: {26, 49}
+    L1: {3, 41} R1: {38, 57}
+    L2: {26, 52} R2: {9, 49}
 
     Recursion Level 3 (Up):
-    L: {3, 9, 38, 52} R: {26, 41, 49, 57}
+    L: {3, 38, 41, 57} R: {9, 26, 49, 52}
 
     Recursion Level 0 (Up):
     L: {3, 9, 26, 38, 41, 49, 52, 57} R:{}
