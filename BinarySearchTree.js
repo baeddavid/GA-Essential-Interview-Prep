@@ -233,7 +233,7 @@ class BinarySearchTree {
     postOrder(node) {
         if(node != null) {
             this.preOrder(node.leftChild);
-            this.preOrder(node.rightChild);
+            this.preOrder(node.rightChild);``
             console.log(node.object + ' ' + node.id);
         }
     }
