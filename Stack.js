@@ -13,7 +13,7 @@
  * 
  * Time Complexities:
  * Insertion: O(1) - amortized
- * Deletion: O(1)
+ * Deletion: O(1) - amortized
  * Search: N/A
  */
 class Stack {
