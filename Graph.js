@@ -97,39 +97,62 @@ class Graph {
 
     // Bredth First Search
     bfs() {
+        // Begin by marking the first vertex as marked
         this.vertexList[0].wasVisited = true;
+        // Display it
         this.displayVertex(0);
+        // Insert it into our queue
         this.queue.enque(0);
+        // Initialize a variable called v2 for vertex2
         let v2;
 
+        // While the queue is not empty
         while(!this.queue.isEmpty()) {
+            // Initialize a variable called v1 and set it equal to the value we remove from the queue
             let v1 = this.queue.deque();
+            // While there are adjacent vertices to v1
             while((v2 = this.getAdjUnvisitedVertex(v1)) != -1) {
+                // mark them as true
                 this.vertexList[v2].wasVisited = true;
+                // Display them
                 this.displayVertex(v2);
+                // Enque them
                 this.queue.enque(v2);
             }
         }
+        // Reset our flags for the vertices
         for(let i = 0; i < this.nVerts; i++)
             this.vertexList[i].wasVisited = false;
     }
 
+    // Depth First Search
     dfs() {
+        // Mark the first vertex as visited
         this.vertexList[0].wasVisited = true;
+        // Display that vertex
         this.displayVertex(0);
+        // Push the vertex into the stack
         this.stack.push(0);
 
+        // While the stack is not empty
         while(!this.stack.empty()) {
+            // Get an adjacent unvisited vertex from the top of the stack
             let vertex = this.getAdjUnvisitedVertex(this.stack.peek());
+            // If there are none, remove it and go to the next vertex on the stack
             if(vertex == -1)
                 this.stack.pop();
+            // Else
             else {
+                // Mark it as true
                 this.vertexList[vertex].wasVisited = true;
+                // Display the vertex
                 this.displayVertex(vertex);
+                // Push the vertex onto the stack
                 this.stack.push(vertex);
             }
         }
 
+        // Reset the flags for all of our vertices.
         for(let i = 0; i < this.nVerts; i++)
             this.vertexList[i].wasVisited = false;
     }
